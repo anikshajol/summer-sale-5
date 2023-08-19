@@ -31,7 +31,13 @@
           above & get <span class="discount">20% off</span>
         </h1>
         <p class="text-2xl inline-block">Use Promo Code</p>
-        <button id="sale-200" class="btn btn-sm btn-secondary">SELL200</button>
+        <button
+          onclick="handleClick(this)"
+          id="sale-200"
+          class="btn btn-sm btn-secondary"
+        >
+          SELL200
+        </button>
       </section>
 
       <!-- header content section end -->
@@ -142,7 +148,7 @@
                     />
                   </div>
 
-                  <p class="text-xl">K. Accessories</p>
+                  <p class="text-xl">J. Accessories</p>
                   <div class="card-actions">
                     <p class="font-normal text-[#11111146]">
                       <span class="text-[#11111146]">25.00 </span>TK
@@ -367,9 +373,15 @@
               class="p-3 w-full mb-2 md:w-[72%] outline-none md:mb-0"
               name=""
               placeholder="Coupon code"
-              id=""
+              id="sale"
             />
-            <button class="btn btn-secondary w-full md:w-1/4">Apply</button>
+            <button
+              disabled
+              class="btn btn-secondary w-full md:w-1/4"
+              id="apply-btn"
+            >
+              Apply
+            </button>
           </div>
 
           <!-- total calculation -->
@@ -381,17 +393,27 @@
             <hr />
             <!-- total price -->
             <div class="price mt-4 mb-6">
-              <p>Total Price: <span>00</span></p>
-              <p>Discount: <span>00</span></p>
-              <p>Total: <span>00</span></p>
+              <p>Total Price: <span id="total-price">00</span></p>
+              <p>Discount: <span id="discount">00</span></p>
+              <p>Total: <span id="total">00</span></p>
             </div>
             <hr />
             <div class="mt-4 text-center">
-              <button class="btn btn-secondary w-3/4">Make Purchase</button>
+              <button
+                disabled
+                class="btn btn-secondary w-3/4"
+                id="make-purchase"
+              >
+                Make Purchase
+              </button>
             </div>
           </section>
         </section>
       </section>
     </main>
+
+    <!-- javascript -->
+
+    <script src="./js/index.js"></script>
   </body>
 </html>
