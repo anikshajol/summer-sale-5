@@ -1,0 +1,32 @@
+/* google font */
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;800&display=swap");
+
+* {
+  font-family: "Work Sans", sans-serif;
+  color: #111;
+}
+
+:root {
+  --text-primary: #111;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #f9f6e2;
+  flex: 1;
+}
+
+header img {
+  width: 40%;
+}
