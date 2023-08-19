@@ -6,18 +6,9 @@
   color: #111;
 }
 
-:root {
+/* :root {
   --text-primary: #111;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--text-primary);
-}
+} */
 
 header {
   display: flex;
@@ -29,4 +20,16 @@ header {
 
 header img {
   width: 40%;
+}
+
+.discount {
+  color: #e527b2;
+}
+
+figure {
+  background-color: #1111110d;
+}
+
+main {
+  background: #f8f8f8;
 }
