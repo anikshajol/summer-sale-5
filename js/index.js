@@ -104,3 +104,20 @@ document
 
     total.innerText = amount;
   });
+
+
+
+  // make purchase button
+
+
+function openModal(data){
+    const modal = document.getElementById('modal')
+    const body = data.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
+
+    modal.classList.add('open-modal')
+  
+    body.style.backgroundColor = 'black'
+    console.log('click');
+
+
+  }
