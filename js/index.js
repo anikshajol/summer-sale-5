@@ -48,47 +48,59 @@ for (let card of cards) {
 
     const totalPrice = document.getElementById("total-price");
 
-    totalPrice.innerText = sum;
+   
+  
+    totalPrice.innerText = sum.toFixed(2);
+
+// discount apply button
+
+    const applyBtn = document.getElementById('apply-btn')
+
+    if(parseFloat(totalPrice.innerText)>=200){
+      applyBtn.removeAttribute("disabled")
+    }
+
+    // makepurchase btn 
 
     const makePurchaseBtn = document.getElementById("make-purchase");
 
-    if (sum > 50) {
+    if (sum > 0) {
       makePurchaseBtn.removeAttribute("disabled");
     }
 
-    console.log();
+   
   });
 }
+
+
+
+
 
 function handleClick(data) {
   const saleInputField = document.getElementById("sale");
 
-  const applyBtn = document.getElementById("apply-btn");
-
   saleInputField.value = data.innerText;
 
-  if (saleInputField.value === "SELL200") {
-    applyBtn.removeAttribute("disabled");
-  }
+ 
 }
 
 document
   .getElementById("apply-btn")
   .addEventListener("click", function setDiscount() {
     const discount = document.getElementById("discount");
-    console.log(discount);
+    
+
 
     const totalPrice = document.getElementById("total-price").innerText;
+ 
 
-    console.log(totalPrice);
-
-    const discountPrice = parseFloat((totalPrice * 20) / 100);
+    const discountPrice = parseFloat((totalPrice * 20) / 100).toFixed(2);
 
     discount.innerText = discountPrice;
 
     const total = document.getElementById("total");
 
-    const amount = totalPrice - discountPrice;
+    const amount = parseFloat(totalPrice - discountPrice).toFixed(2);
 
     total.innerText = amount;
   });
