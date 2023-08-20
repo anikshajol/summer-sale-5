@@ -70,6 +70,12 @@ for (let card of cards) {
 
 function handleClick(data) {
   const saleInputField = document.getElementById("sale");
+  const totalPrice = document.getElementById("total-price");
+
+  if (totalPrice.innerText < 200) {
+    alert("Purchase TK 200 or above to get this coupon");
+    return;
+  }
 
   saleInputField.value = data.innerText;
 }
