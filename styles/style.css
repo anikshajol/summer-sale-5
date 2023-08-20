@@ -20,7 +20,6 @@ header {
 
 figure {
   background-color: #1111110d;
-  height: 40%;
 }
 
 card img {
@@ -41,6 +40,3 @@ input {
 .price span {
   color: #11111146;
 }
-
-
-

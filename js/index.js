@@ -101,7 +101,7 @@ document
 // make purchase button
 
 function goHome() {
-  //  location.href='http://127.0.0.1:5500/index.html'
+  location.href = "index.html";
   const totalPrice = document.getElementById("total-price");
   const discount = document.getElementById("discount");
   const total = document.getElementById("total");
