@@ -35,8 +35,10 @@ for (let card of cards) {
     sum += priceOfProducts;
 
     const totalPrice = document.getElementById("total-price");
+    const total = document.getElementById("total");
 
     totalPrice.innerText = sum.toFixed(2);
+    total.innerText = sum.toFixed(2);
 
     // discount apply button
 
