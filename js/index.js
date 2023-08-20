@@ -89,20 +89,28 @@ document
   .addEventListener("click", function setDiscount() {
     const discount = document.getElementById("discount");
     
+    const saleInputField = document.getElementById("sale");
 
-
-    const totalPrice = document.getElementById("total-price").innerText;
+    if(saleInputField.value === 'SELL200'){
+      const totalPrice = document.getElementById("total-price").innerText;
  
 
-    const discountPrice = parseFloat((totalPrice * 20) / 100).toFixed(2);
+      const discountPrice = parseFloat((totalPrice * 20) / 100).toFixed(2);
+  
+      discount.innerText = discountPrice;
+  
+      const total = document.getElementById("total");
+  
+      const amount = parseFloat(totalPrice - discountPrice).toFixed(2);
+  
+      total.innerText = amount;
 
-    discount.innerText = discountPrice;
+    }
+    else{
+      alert('Please enter a valid cupon code')
+    }
 
-    const total = document.getElementById("total");
 
-    const amount = parseFloat(totalPrice - discountPrice).toFixed(2);
-
-    total.innerText = amount;
   });
 
 
@@ -110,14 +118,15 @@ document
   // make purchase button
 
 
-function openModal(data){
-    const modal = document.getElementById('modal')
-    const body = data.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
-
-    modal.classList.add('open-modal')
-  
-    body.style.backgroundColor = 'black'
-    console.log('click');
-
+  function goHome(){
+     location.href='http://127.0.0.1:5500/index.html'
+     const totalPrice = document.getElementById("total-price");
+     const discount = document.getElementById("discount");
+     const total = document.getElementById("total");
+     const saleInputField = document.getElementById("sale");
+     totalPrice.innerText = "0.00"
+     discount.innerText = "0.00"
+     total.innerText = "0.00"
+     saleInputField.value = ''
 
   }
