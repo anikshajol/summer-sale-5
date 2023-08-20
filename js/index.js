@@ -28,7 +28,7 @@ for (let card of cards) {
       products.push(productName);
       for (let product of products) {
         // set inner text
-        p.innerText = `${count}. ${product}`;
+        p.innerText = `${count + 1}. ${product}`;
 
         // appendChild to section
         selectProducts.appendChild(p);
@@ -48,85 +48,69 @@ for (let card of cards) {
 
     const totalPrice = document.getElementById("total-price");
 
-   
-  
     totalPrice.innerText = sum.toFixed(2);
 
-// discount apply button
+    // discount apply button
 
-    const applyBtn = document.getElementById('apply-btn')
+    const applyBtn = document.getElementById("apply-btn");
 
-    if(parseFloat(totalPrice.innerText)>=200){
-      applyBtn.removeAttribute("disabled")
+    if (parseFloat(totalPrice.innerText) >= 200) {
+      applyBtn.removeAttribute("disabled");
     }
 
-    // makepurchase btn 
+    // make purchase btn
 
     const makePurchaseBtn = document.getElementById("make-purchase");
 
     if (sum > 0) {
       makePurchaseBtn.removeAttribute("disabled");
     }
-
-   
   });
 }
-
-
-
-
 
 function handleClick(data) {
   const saleInputField = document.getElementById("sale");
 
   saleInputField.value = data.innerText;
-
- 
 }
 
 document
   .getElementById("apply-btn")
   .addEventListener("click", function setDiscount() {
     const discount = document.getElementById("discount");
-    
+
     const saleInputField = document.getElementById("sale");
 
-    if(saleInputField.value === 'SELL200'){
+    if (saleInputField.value === "SELL200") {
       const totalPrice = document.getElementById("total-price").innerText;
- 
 
       const discountPrice = parseFloat((totalPrice * 20) / 100).toFixed(2);
-  
+
       discount.innerText = discountPrice;
-  
+
       const total = document.getElementById("total");
-  
+
       const amount = parseFloat(totalPrice - discountPrice).toFixed(2);
-  
+
       total.innerText = amount;
-
+    } else {
+      alert("Please enter a valid cupon code");
     }
-    else{
-      alert('Please enter a valid cupon code')
-    }
-
-
   });
 
+// make purchase button
 
-
-  // make purchase button
-
-
-  function goHome(){
-     location.href='http://127.0.0.1:5500/index.html'
-     const totalPrice = document.getElementById("total-price");
-     const discount = document.getElementById("discount");
-     const total = document.getElementById("total");
-     const saleInputField = document.getElementById("sale");
-     totalPrice.innerText = "0.00"
-     discount.innerText = "0.00"
-     total.innerText = "0.00"
-     saleInputField.value = ''
-
-  }
+function goHome() {
+  //  location.href='http://127.0.0.1:5500/index.html'
+  const totalPrice = document.getElementById("total-price");
+  const discount = document.getElementById("discount");
+  const total = document.getElementById("total");
+  const saleInputField = document.getElementById("sale");
+  // selected products section get
+  const selectProducts = document.getElementById("product-select-section");
+  selectProducts.innerHTML = "";
+  totalPrice.innerText = "0.00";
+  discount.innerText = "0.00";
+  total.innerText = "0.00";
+  saleInputField.value = "";
+}
