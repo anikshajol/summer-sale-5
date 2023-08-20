@@ -1,6 +1,5 @@
 const cards = document.querySelectorAll(".card");
 
-const products = [];
 let sum = 0;
 
 for (let card of cards) {
@@ -21,22 +20,11 @@ for (let card of cards) {
 
     const p = document.createElement("p");
     const count = selectProducts.childElementCount;
+    // set inner text
+    p.innerText = `${count + 1}. ${productName}`;
 
-    // validation for duplicate products
-
-    if (products.includes(productName) === false) {
-      products.push(productName);
-      for (let product of products) {
-        // set inner text
-        p.innerText = `${count + 1}. ${product}`;
-
-        // appendChild to section
-        selectProducts.appendChild(p);
-      }
-    } else {
-      alert("You can't select same products");
-      return;
-    }
+    // appendChild to section
+    selectProducts.appendChild(p);
 
     // get price of products and sum of total price
 
